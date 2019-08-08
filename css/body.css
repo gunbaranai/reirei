@@ -9,10 +9,15 @@ body {
 	background-size: cover;
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 320px) {
 	body {
 		background-image: url("../assets/images/img_background@2x.png");
 	}
+}
+
+.flex-shrink-0 .container {
+	margin-top: 30px;
+	margin-bottom: 100px;
 }
 
 /* CARD CONTENT */
@@ -22,6 +27,9 @@ body {
 	position: relative;
 	align-items: center;
 	justify-content: center;
+	border-radius: 20px;
+	width: 250px;
+	height: 420px;
 }
 
 #content .new {
@@ -30,10 +38,48 @@ body {
 	right: 0px;
 }
 
-.btn-like {
+.btn-view {
 	position: absolute;
-	top: 17px;
-	left: 20px;
+	border-width: 1px;
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 12px;
+	width: 200px;
+	height: 35px;
+	bottom: 50px;
+	opacity: 0;
+	transition: all .2s ease-in;
+	z-index: 200;
+	border-radius: 40px;
+	visibility: hidden;
+}
+
+#content:hover .btn-view {
+	border-width: 1px;
+	border-color: #FFFFFF;
+	visibility: visible;
+	opacity: 0.74;
+	bottom: 40px;
+}
+
+.in-stock .btn-view {
+	background-color: #6DA425;
+}
+
+.out-of-stock .btn-view {
+	background-color: #757575;
+}
+
+.in-stock .btn-view:hover {
+	background-color: #757575;
+}
+
+.out-of-stock .btn-view:hover {
+	background-color: #6DA425;
+}
+
+.btn-like {
 	width: 54px;
 	height: 32px;
 	background-color: #FFFFFF;
@@ -42,19 +88,35 @@ body {
 	border-color: #E1E1E1;
 }
 
+.all-list .btn-like {
+	position: absolute;
+	top: 17px;
+	left: 20px;
+}
+
+.detail .btn-like {
+	width: 70px;
+	height: 45px;
+	margin-right: 20px;
+}
+
 .btn-like:hover {
-	top: 18px;
-	left: 21px;
+	top: 0px;
+	left: 0px;
 	border-width: 0px;
 	background-color: #E7246B;
 }
 
 .btn-like img {
-	position: absolute;
-	top: 8px;
-	left: 18px;
+	position: relative;
+	top: -5px;
+	left: 0px;
 	border-width: 1px;
 	border-color: #E1E1E1;
+}
+
+.detail .btn-like img {
+	top: 0px;
 }
 
 .btn-like:hover img {
@@ -73,13 +135,17 @@ body {
 
 #content .hover {
 	position: absolute;
-	bottom: 0px;
+	bottom: -100px;
 	left: 0px;
+	transition: all .2s ease-out;
 }
 
 #content .card-img-overlay {
-	opacity: 0.9;
-	visibility: hidden;
+	border-radius: 3px;
+	opacity: 0;
+	/*visibility: hidden;*/
+	transition: all .2s ease-in;
+	overflow: hidden;
 }
 
 #content .in-stock {
@@ -91,7 +157,16 @@ body {
 }
 
 #content:hover .card-img-overlay {
-	visibility: visible;
+	/*visibility: visible;*/
+	opacity: 0.8;
+}
+
+#content:hover .hover {
+	bottom: 0px;
+}
+
+.card-image .img-fluid {
+	object-fit: scale-down;
 }
 
 #content p#product-name {
@@ -133,4 +208,121 @@ body {
 
 #content .point {
 	border-radius: 50%;
+}
+
+.detail {
+	font-family: 'Raleway';
+	font-size: 14px;
+}
+
+.detail .new {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.detail .card-header {
+	background-color: #FFFFFF;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.detail #reviews {
+	margin-bottom: 10px;
+}
+
+.detail #reviews p {
+	margin-left: 5px;
+	color: #838EAB;
+}
+
+.detail p.points {
+	margin-left: 5px;
+	font-size: 24px;
+	color: #74B71B;
+}
+
+.detail p.stock {
+	font-weight: 600;
+	margin-left: 10px;
+	color: #006A4E;
+}
+
+.detail #points, .detail p {
+	display: inline;
+}
+
+.detail #info {
+	width: 400px;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.detail #info p {
+	letter-spacing: 0.01px;
+	color: #262626;
+}
+
+.detail .input-group {
+	border-width: 1px
+}
+
+.detail .card-footer {
+	background-color: #FFFFFF;
+}
+
+.btn-redeem {
+	margin-right: 20px;
+	width: 150px;
+	height: 45px;
+	background-color: #006A4E;
+	border-radius: 40px;
+	border-width: 1px;
+	border-color: #006A4E;
+}
+
+.btn-redeem:hover {
+	color: #006A4E;
+	background-color: #FFFFFF;
+	border-width: 1px;
+	border-color: #006A4E;
+}
+
+.btn-addtocart {
+	color: #74B71B;
+	width: 150px;
+	height: 45px;
+	background-color: #FFFFFF;
+	border-radius: 40px;
+	border-width: 1px;
+	border-color: #74B71B;
+}
+
+.btn-addtocart:hover {
+	color: #FFFFFF;
+	background-color: #74B71B;
+	border-width: 1px;
+	border-color: #74B71B;
+}
+
+.detail .description {
+	margin-top: 50px;
+}
+
+.detail .description h3 {
+	font-size: 16px;
+	color: #74B71B;
+}
+
+.detail .boldline {
+	border-bottom: solid;
+}
+
+.detail .thinline {
+	border-bottom: solid;
+}
+
+.detail .description h2 {
+	color: #006A4E;
+	font-size: 20px;
 }
