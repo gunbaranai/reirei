@@ -1,0 +1,136 @@
+body {
+	background-image: url("../assets/images/img_background.png");
+	
+	height: 100%;
+
+	background-attachment: fixed;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@media (min-width: 1281px) {
+	body {
+		background-image: url("../assets/images/img_background@2x.png");
+	}
+}
+
+/* CARD CONTENT */
+#content {
+	font-family: 'Raleway';
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+#content .new {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.btn-like {
+	position: absolute;
+	top: 17px;
+	left: 20px;
+	width: 54px;
+	height: 32px;
+	background-color: #FFFFFF;
+	border-radius: 40px;
+	border-width: 1px;
+	border-color: #E1E1E1;
+}
+
+.btn-like:hover {
+	top: 18px;
+	left: 21px;
+	border-width: 0px;
+	background-color: #E7246B;
+}
+
+.btn-like img {
+	position: absolute;
+	top: 8px;
+	left: 18px;
+	border-width: 1px;
+	border-color: #E1E1E1;
+}
+
+.btn-like:hover img {
+	border-width: 0px;
+}
+
+#content p#stock {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	color: #E64580;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+#content .hover {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+#content .card-img-overlay {
+	opacity: 0.9;
+	visibility: hidden;
+}
+
+#content .in-stock {
+	background-color: #74B71B;
+}
+
+#content .out-of-stock {
+	background-color: #D8D8D8;
+}
+
+#content:hover .card-img-overlay {
+	visibility: visible;
+}
+
+#content p#product-name {
+	width: 200px;
+	color: #3C3C3F;
+	text-align: left;
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-bottom: 0px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#content #points, #content #reviews {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#content #points p, #content #reviews p {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#content #points p {
+	font-size: 14px;
+	color: #74B71B;
+}
+
+#content #reviews p {
+	font-size: 12px;
+	color: #838EAB;
+}
+
+#content .point, #content p {
+	display: inline-flex;
+}
+
+#content .point {
+	border-radius: 50%;
+}
